@@ -1,0 +1,113 @@
+:root {
+    --dark: #374151;
+    --darker: #1F2937;
+    --darkest: #111827;
+    --gray: #6B7280;
+    --light: #EEE;
+    --pink: #EC4899;
+    --purple: #8B5CF6;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Encode Sans Expanded", sans-serif;
+}
+body {
+    background-color: var(--dark);
+}
+body>* {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    width: 60%;
+    padding: 2vh;
+}
+#add-new-task-form {
+    padding: 1vh 0;
+    display: flex;
+    column-gap: 2vh;
+}
+:is(input[type='text']) {
+    width: 70%;
+    background-color: var(--darker);
+    color: var(--dark);
+    outline: none;
+    border: none;
+    padding: 1.5vh;
+    border-radius: 10px;  
+}
+:is(input[type='text']):focus {
+color: white;
+}
+#add-task {
+    background: -webkit-linear-gradient(350deg, var(--pink), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 0.9em;
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+:is(h1, h2) {
+    color: var(--gray);
+    font-weight: 300;
+    margin: 1vh 0;
+}
+#tasks {
+    width: 100%;
+}
+.task {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5vh ;
+    margin-block: 2vh;
+    background-color: var(--darkest);
+    border: none;
+    border-radius: 10px;
+    .task-content {
+        width: 70%;
+        input {
+            width: 100%;
+            color: white;
+            background-color: transparent;
+            font-weight: 600;
+        }
+        input:not(:read-only){
+           color: var(--pink);
+        }
+    }
+    .task-actions {
+        width: 30%;
+        display: flex;
+        justify-content: space-around;
+        button {
+            width: 30%;
+            font-size: 0.8em;
+            font-weight: 700;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        .edit {
+            background: -webkit-linear-gradient(350deg, var(--pink), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .del {
+            color: red;
+        }
+        .del:hover{
+            color: rgb(162, 7, 7);
+        }
+    }
+}
+.task-text{
+    background: -webkit-linear-gradient(350deg, var(--pink), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
